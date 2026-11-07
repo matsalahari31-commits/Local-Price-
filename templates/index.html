@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Price Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="mark" aria-hidden="true">₹</span>
+            <div>
+                <p class="eyebrow">Compare the same product nearby</p>
+                <h1>Local Price Finder</h1>
+            </div>
+        </div>
+        <p class="demo-pill">Demo Data — not real shop prices</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Find the lowest sample price for one product.</h2>
+            <p class="lead">
+                Type a product and a place. This page is the front of the app.
+                Shop prices are not loaded yet, so a search will not show real prices.
+            </p>
+
+            <form class="search-card" action="/search" method="post">
+                <label for="product">Product</label>
+                <input
+                    id="product"
+                    name="product"
+                    type="text"
+                    placeholder="Example: Rice 5kg"
+                    autocomplete="off"
+                    required
+                >
+
+                <label for="location">Your location</label>
+                <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    placeholder="Example: MG Road, Bengaluru"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">Search</button>
+                <p id="form-note" class="form-note" role="status"></p>
+            </form>
+        </section>
+
+        <section class="examples" aria-label="Example searches">
+            <h3>Try an example</h3>
+            <ul>
+                <li>Rice 5kg</li>
+                <li>Milk 1 litre</li>
+                <li>Shampoo 650ml</li>
+                <li>Laptop</li>
+                <li>Mobile phone</li>
+            </ul>
+            <p class="hint">Clicking these only fills the product box. It does not search yet.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sample project for learning. Every price you see later will be labeled Demo Data until a real shop source is connected.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

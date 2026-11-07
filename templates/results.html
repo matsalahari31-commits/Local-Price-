@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search — Local Price Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="mark" aria-hidden="true">₹</span>
+            <div>
+                <p class="eyebrow">Search received</p>
+                <h1>Local Price Finder</h1>
+            </div>
+        </div>
+        <p class="demo-pill">Demo Data — prices not loaded</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>No shop prices yet</h2>
+            <p class="lead">
+                You asked for <strong>{{ product }}</strong>
+                near <strong>{{ location }}</strong>.
+                The search box works. The price table comes in a later step.
+            </p>
+            <a class="back-link" href="/">Back to search</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>This screen is still Demo Data. It is not a live price from a shop.</p>
+    </footer>
+</body>
+</html>
